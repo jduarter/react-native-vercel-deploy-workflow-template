@@ -1,0 +1,76 @@
+# React Native Vercel deploy workflow template [v1]
+#
+# Jorge Duarte Rodríguez <info@malagadev.com>
+# (c) 2021
+#
+# MIT LICENSE
+
+name: "react-native-vercel-deploy"
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  deploy:
+    name: RN Deploy to Vercel (as web)
+    environment: my-environment
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: read
+
+    strategy:
+      fail-fast: true
+      matrix:
+        language:
+        - javascript
+
+    steps:
+    - name: gflows check
+      uses: jbrunton/setup-gflows@v1
+    # setup-gflows uses the GitHub API to find information about
+    # latest releases. To avoid rate limits it is recommended you
+    # pass a token.
+    #
+    #  with:
+    #    token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+        
+    - name: Install dependencies using npm
+      run: |
+        npm install
+      
+    - name: Run npm run typescript
+      run: |
+        npm run typescript
+        
+    - name: Run npm test
+      run: |
+        npm test      
+
+    - name: Convert to expo project
+      run: |
+        npx expoize
+        
+    - name: Run expo-optimize
+      run: |
+        npx expo-optimize
+        
+    - name: Run expo build for web
+      run: |
+        npx expo build:web
+
+    - name: Vercel Action
+      uses: amondnet/vercel-action@v20.0.0
+      with:
+        vercel-args: -c -C
+        alias-domains: my-alias-domains
+        vercel-project-name: my-vercel-project-name
+        working-directory: my-working-directory
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
