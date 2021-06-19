@@ -52,7 +52,7 @@ jobs:
         
     - name: Run npm test
       run: |
-        npm test      
+        npm test
 
     - name: Convert to expo project
       run: |
