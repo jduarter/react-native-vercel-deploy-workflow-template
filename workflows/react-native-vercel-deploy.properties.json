@@ -1,21 +1,21 @@
 {
-    "name": "React Native Vercel Deployment Workflow",
-    "description": "React Native Vercel Deployment Workflow template for both non-Expo & Expo projects.",
-    "iconName": "react-native-vercel-deploy",
-    "categories": [
-        "Typescript",
-	    "Javascript",
-        "Node",
-        "Vercel",
-        "React",
-	    "React Native"
-    ],
-    "filePatterns": [
-        "app.json",
-        "src/app.json",
-        "ios/",
-        "android/",
-        "metro.config.js",
-        "rn-cli.config.js"
-    ]
+	"name": "React Native Vercel Deployment Workflow",
+	"description": "React Native Vercel Deployment Workflow template for both non-Expo & Expo projects.",
+	"iconName": "react-native-vercel-deploy",
+	"categories": [
+		"Typescript",
+		"Javascript",
+		"Node",
+		"Vercel",
+		"React",
+		"React Native"
+	],
+	"filePatterns": [
+		"app.json",
+		"src/app.json",
+		"ios/",
+		"android/",
+		"metro.config.js",
+		"rn-cli.config.js"
+	]
 }
