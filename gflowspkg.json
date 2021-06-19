@@ -1,8 +1,8 @@
 {
   "name": "react-native-vercel-deploy-workflow-template",
   "files": [
-    "workflow/react-native-vercel-deploy.yml",
-    "workflow/react-native-vercel-deploy.properties.json",
-    "workflow/react-native-vercel-deploy.svg"
+    "workflows/react-native-vercel-deploy.yml",
+    "workflows/react-native-vercel-deploy.properties.json",
+    "workflows/react-native-vercel-deploy.svg"
   ]
 }
