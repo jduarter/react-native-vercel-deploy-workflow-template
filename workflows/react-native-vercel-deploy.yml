@@ -72,5 +72,4 @@ jobs:
         vercel-args: -c -C
         alias-domains: my-alias-domains
         vercel-project-name: my-vercel-project-name
-        working-directory: my-working-directory
         vercel-token: ${{ secrets.VERCEL_TOKEN }}
