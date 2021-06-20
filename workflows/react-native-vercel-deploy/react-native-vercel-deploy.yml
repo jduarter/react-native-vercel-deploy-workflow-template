@@ -32,24 +32,24 @@ jobs:
     steps:
     - name: gflows check
       uses: jbrunton/setup-gflows@v1
-#! setup-gflows uses the GitHub API to find information about
-#! latest releases. To avoid rate limits it is recommended you
-#! pass a token.
-#!
-#!  with:
-#!    token: ${{ secrets.GITHUB_TOKEN }}
+      #! setup-gflows uses the GitHub API to find information about
+      #! latest releases. To avoid rate limits it is recommended you
+      #! pass a token.
+      #!
+      #!  with:
+      #!    token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Checkout repository
       uses: actions/checkout@v2
-        
+
     - name: Install dependencies using npm
       run: |
         npm install
-      
+
     - name: Run npm run typescript
       run: |
         npm run typescript
-        
+
     - name: Run npm test
       run: |
         npm test
@@ -57,11 +57,11 @@ jobs:
     - name: Convert to expo project
       run: |
         npx expoize
-        
+
     - name: Run expo-optimize
       run: |
         npx expo-optimize
-        
+
     - name: Run expo build for web
       run: |
         npx expo build:web
