@@ -1,6 +1,6 @@
 {
   "name": "react-native-vercel-deploy",
   "files": [
-    "workflows/react-native-vercel-deploy.yml"
+    "workflows/react-native-vercel-deploy/react-native-vercel-deploy.yml"
   ]
 }
