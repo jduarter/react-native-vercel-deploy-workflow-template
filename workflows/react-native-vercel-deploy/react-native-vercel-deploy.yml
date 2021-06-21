@@ -65,12 +65,13 @@ jobs:
 
       - name: Run expo build for web
         run: |
-          npx expo build:web
+          npx expo build:web ./expo_web_build_vercel
 
       - name: Vercel Action
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-args: -c -C
+          working-directory: ./expo_web_build_vercel
           alias-domains: #@ data.values.vercel.alias_domains
           vercel-project-name: #@ data.values.vercel.project_name
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
