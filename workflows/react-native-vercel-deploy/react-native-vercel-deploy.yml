@@ -1,4 +1,4 @@
-#@ load("workflows.lib.yml", "trigger_push_defaults_for_build")
+#@ load("workflows.lib.yml", "trigger_defaults_for_build")
 #@ load("@ytt:data", "data")
 #
 # ! React Native Vercel deploy workflow template [v1]
@@ -12,7 +12,7 @@
 
 name: "react-native-vercel-deploy"
 
-"on": #@ trigger_push_defaults_for_build()
+"on": #@ trigger_defaults_for_build()
 
 jobs:
   deploy:
