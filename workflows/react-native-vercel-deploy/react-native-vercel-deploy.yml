@@ -1,3 +1,5 @@
+#@ load("@ytt:data", "data")
+#
 # ! React Native Vercel deploy workflow template [v1]
 # !
 # ! Jorge Duarte Rodríguez <info@malagadev.com>
