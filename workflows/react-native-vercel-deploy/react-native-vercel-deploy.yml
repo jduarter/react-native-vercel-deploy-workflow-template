@@ -18,7 +18,7 @@ name: "react-native-vercel-deploy"
 jobs:
   deploy:
     name: RN Deploy to Vercel (as web)
-    environment: my-environment
+    environment: #@ data.values.environment
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -72,6 +72,6 @@ jobs:
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-args: -c -C
-          alias-domains: my-alias-domains
-          vercel-project-name: my-vercel-project-name
+          alias-domains: #@ data.values.vercel.alias_domains
+          vercel-project-name: #@ data.values.vercel.project_name
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
