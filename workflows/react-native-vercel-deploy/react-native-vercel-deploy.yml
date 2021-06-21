@@ -11,11 +11,7 @@
 
 name: "react-native-vercel-deploy"
 
-"on":
-  push:
-    branches: [$default-branch]
-  pull_request:
-    branches: [$default-branch]
+"on": #@ pull_request_defaults()
 
 jobs:
   deploy:
