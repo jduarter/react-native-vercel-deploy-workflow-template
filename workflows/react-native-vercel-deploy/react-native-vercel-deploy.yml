@@ -70,7 +70,7 @@ jobs:
       - name: Vercel Action
         uses: amondnet/vercel-action@v20.0.0
         with:
-          vercel-args: -c -C
+          vercel-args: -y
           working-directory: ./web-build
           alias-domains: #@ data.values.vercel.alias_domains
           vercel-project-name: #@ data.values.vercel.project_name
